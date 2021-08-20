@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditTextPreference
+        android:defaultValue="Ralf"
+        android:key="key_name"
+        app:title="@string/sort_by_name" />
+
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="key_age"
+        app:title="@string/sort_by_age" />
+
+    <EditTextPreference
+        android:defaultValue="Dog"
+        android:key="key_breed"
+        app:title="@string/sort_by_breed" />
+
+</PreferenceScreen>
