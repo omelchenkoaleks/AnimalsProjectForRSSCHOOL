@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Animals</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="animals">Animals</string>
     <string name="desc_btn_add_animal">Add new animal in database</string>
     <string name="add_animal">Add Animal</string>
@@ -10,4 +9,9 @@
     <string name="sort_by_name">Name:</string>
     <string name="sort_by_age">Age:</string>
     <string name="sort_by_breed">Breed:</string>
+    <string name="key_name">key_name</string>
+    <string name="key_age">key_age</string>
+    <string name="key_breed">key_breed</string>
+    <string name="save">Save</string>
+
 </resources>

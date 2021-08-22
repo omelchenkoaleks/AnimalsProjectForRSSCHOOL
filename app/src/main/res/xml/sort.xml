@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditTextPreference
-        android:defaultValue="Ralf"
-        android:key="key_name"
+        android:defaultValue="Dog"
+        android:key="@string/key_name"
         app:title="@string/sort_by_name" />
 
     <EditTextPreference
         android:defaultValue="1"
-        android:key="key_age"
+        android:key="@string/key_age"
         app:title="@string/sort_by_age" />
 
     <EditTextPreference
-        android:defaultValue="Dog"
-        android:key="key_breed"
+        android:defaultValue="Bulldog"
+        android:key="@string/key_breed"
         app:title="@string/sort_by_breed" />
 
 </PreferenceScreen>

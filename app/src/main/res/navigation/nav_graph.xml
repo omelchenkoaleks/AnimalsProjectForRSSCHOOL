@@ -6,7 +6,7 @@
     app:startDestination="@id/animalsFragment">
     <fragment
         android:id="@+id/animalsFragment"
-        android:name="com.omelchenkoaleks.animals.screens.AnimalsFragment"
+        android:name="com.omelchenkoaleks.animals.screens.main.AnimalsFragment"
         android:label="fragment_animals"
         tools:layout="@layout/fragment_animals" >
         <action

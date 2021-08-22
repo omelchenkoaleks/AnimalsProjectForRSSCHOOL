@@ -28,8 +28,8 @@ class AddAnimalFragment : Fragment() {
         APP_ACTIVITY.buttonSort.visibility = View.INVISIBLE
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 }
