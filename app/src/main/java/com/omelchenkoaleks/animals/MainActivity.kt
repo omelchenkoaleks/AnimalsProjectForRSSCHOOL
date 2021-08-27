@@ -12,6 +12,7 @@ import com.omelchenkoaleks.animals.utils.APP_ACTIVITY
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
     lateinit var navController: NavController
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
     lateinit var toolbarTitle: MaterialTextView
@@ -23,13 +24,12 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         APP_ACTIVITY = this
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         initToolbar()
 
-
         binding.btnSort.setOnClickListener {
-            APP_ACTIVITY.navController.navigate(R.id.action_animalsFragment_to_extraOnSortFragment)
+            this.navController.navigate(R.id.action_animalsFragment_to_extraOnSortFragment)
         }
 
     }

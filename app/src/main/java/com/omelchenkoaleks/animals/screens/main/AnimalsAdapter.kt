@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.omelchenkoaleks.animals.R
 import com.omelchenkoaleks.animals.databinding.AnimalItemBinding
-import com.omelchenkoaleks.animals.models.Animal
+import com.omelchenkoaleks.animals.model.Animal
 import com.omelchenkoaleks.animals.utils.APP_ACTIVITY
 
 class AnimalsAdapter : RecyclerView.Adapter<AnimalsAdapter.AnimalsHolder>() {

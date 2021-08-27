@@ -5,16 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
+import com.omelchenkoaleks.animals.AnimalsApplication
 import com.omelchenkoaleks.animals.R
 import com.omelchenkoaleks.animals.databinding.FragmentAnimalsBinding
 import com.omelchenkoaleks.animals.utils.APP_ACTIVITY
-import com.omelchenkoaleks.animals.utils.listAnimals
+
 
 class AnimalsFragment : Fragment() {
 
     private var _binding: FragmentAnimalsBinding? = null
     private val binding get() = requireNotNull(_binding)
+
+    private val animalViewModel: AnimalViewModel by viewModels {
+        AnimalViewModelFactory((activity?.application as AnimalsApplication).repository)
+    }
 
     private lateinit var recycler: RecyclerView
     private lateinit var adapter: AnimalsAdapter
@@ -27,11 +33,17 @@ class AnimalsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        animalViewModel.allAnimals.observe(APP_ACTIVITY) { animals ->
+            animals.let { adapter.setAnimals(it) }
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = AnimalsAdapter()
-        adapter.setAnimals(listAnimals)
         recycler = binding.recyclerView
         recycler.adapter = adapter
 
@@ -39,7 +51,6 @@ class AnimalsFragment : Fragment() {
         binding.btnAddAnimal.setOnClickListener {
             APP_ACTIVITY.navController.navigate(R.id.action_animalsFragment_to_addAnimalFragment)
         }
-
     }
 
     override fun onResume() {

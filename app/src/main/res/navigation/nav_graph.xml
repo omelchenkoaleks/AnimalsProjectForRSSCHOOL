@@ -18,9 +18,13 @@
     </fragment>
     <fragment
         android:id="@+id/addAnimalFragment"
-        android:name="com.omelchenkoaleks.animals.screens.AddAnimalFragment"
+        android:name="com.omelchenkoaleks.animals.screens.add.AddAnimalFragment"
         android:label="fragment_add_animal"
-        tools:layout="@layout/fragment_add_animal" />
+        tools:layout="@layout/fragment_add_animal" >
+        <action
+            android:id="@+id/action_addAnimalFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/extraOnSortFragment"
         android:name="com.omelchenkoaleks.animals.screens.sort.SortFragment"

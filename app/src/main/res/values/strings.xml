@@ -13,5 +13,6 @@
     <string name="key_age">key_age</string>
     <string name="key_breed">key_breed</string>
     <string name="save">Save</string>
+    <string name="sort">Please choose how you want to sort the animals!</string>
 
 </resources>
