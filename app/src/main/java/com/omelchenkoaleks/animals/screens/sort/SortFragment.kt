@@ -22,12 +22,21 @@ class SortFragment : Fragment() {
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        APP_ACTIVITY.buttonBack.setOnClickListener {
+            APP_ACTIVITY.buttonBack.visibility = View.INVISIBLE
+            APP_ACTIVITY.navController.navigate(R.id.action_extraOnSortFragment_to_animalsFragment)
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         APP_ACTIVITY.toolbarTitle.text = getString(R.string.sort_by)
         APP_ACTIVITY.buttonSort.visibility = View.INVISIBLE
+        APP_ACTIVITY.buttonBack.visibility = View.VISIBLE
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

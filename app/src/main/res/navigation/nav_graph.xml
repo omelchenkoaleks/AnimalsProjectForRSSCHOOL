@@ -29,5 +29,9 @@
         android:id="@+id/extraOnSortFragment"
         android:name="com.omelchenkoaleks.animals.screens.sort.SortFragment"
         android:label="fragment_extra_on_sort"
-        tools:layout="@layout/fragment_sort" />
+        tools:layout="@layout/fragment_sort" >
+        <action
+            android:id="@+id/action_extraOnSortFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+    </fragment>
 </navigation>

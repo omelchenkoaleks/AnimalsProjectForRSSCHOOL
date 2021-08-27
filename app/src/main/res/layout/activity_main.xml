@@ -20,6 +20,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:src="@drawable/ic_arrow_back"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/toolbar_title" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/toolbar_title"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
