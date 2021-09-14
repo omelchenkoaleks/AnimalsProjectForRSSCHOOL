@@ -8,8 +8,8 @@ import kotlinx.coroutines.SupervisorJob
 
 class AnimalsApplication: Application() {
 
-    val applicationScope = CoroutineScope(SupervisorJob())
+    private val applicationScope = CoroutineScope(SupervisorJob())
 
-    val database by lazy { AnimalDatabase.getInstance(this, applicationScope) }
+    private val database by lazy { AnimalDatabase.getInstance(this, applicationScope) }
     val repository by lazy { AnimalRepository(database.animalDao()) }
 }

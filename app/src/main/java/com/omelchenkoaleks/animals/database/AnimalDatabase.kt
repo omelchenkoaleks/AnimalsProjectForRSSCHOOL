@@ -55,7 +55,7 @@ abstract class AnimalDatabase : RoomDatabase() {
 
         suspend fun populateDatabase(animalDao: AnimalDao) {
 
-//            animalDao.deleteAll()
+            animalDao.deleteAll()
 
             for (animal in listAnimals) {
                 animalDao.insert(animal)

@@ -1,17 +1,16 @@
 package com.omelchenkoaleks.animals.screens.main
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import com.omelchenkoaleks.animals.database.AnimalRepository
 import com.omelchenkoaleks.animals.model.Animal
-import kotlinx.coroutines.launch
 
 class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
 
     val allAnimals: LiveData<List<Animal>> = repository.allAnimals.asLiveData()
 
-    fun insert(animal: Animal) = viewModelScope.launch {
-        repository.insert(animal)
-    }
 }
 
 class AnimalViewModelFactory(private val repository: AnimalRepository) :

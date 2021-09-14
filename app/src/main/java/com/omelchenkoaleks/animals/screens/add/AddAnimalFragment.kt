@@ -22,14 +22,6 @@ class AddAnimalFragment : Fragment() {
         AddAnimalViewModelFactory((activity?.application as AnimalsApplication).repository)
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//        addAnimalViewModel.allAnimals.observe(APP_ACTIVITY) { animals ->
-//            animals.let {  }
-//        }
-//    }
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

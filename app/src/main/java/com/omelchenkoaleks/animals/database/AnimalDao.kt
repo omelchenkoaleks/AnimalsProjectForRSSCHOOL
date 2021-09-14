@@ -13,6 +13,9 @@ interface AnimalDao {
     @Query("SELECT * FROM animal_table")
     fun getAllAnimals(): Flow<List<Animal>>
 
+    @Query("SELECT * FROM animal_table WHERE name LIKE :name OR age LIKE :age OR breed LIKE :breed")
+    fun getAllAnimalsBySort(name: String, age: String, breed: String): Flow<List<Animal>>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(animal: Animal)
 
