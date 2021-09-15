@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
 import com.omelchenkoaleks.animals.R
 import com.omelchenkoaleks.animals.databinding.FragmentSortBinding
 import com.omelchenkoaleks.animals.utils.APP_ACTIVITY
@@ -33,10 +31,6 @@ class SortFragment : Fragment() {
             APP_ACTIVITY.buttonBack.visibility = View.INVISIBLE
 
             redrawList = true
-            setFragmentResult(
-                "key_redraw_list_request",
-                bundleOf("key_redraw_list_bundle" to redrawList)
-            )
 
             APP_ACTIVITY.navController.navigate(R.id.action_extraOnSortFragment_to_animalsFragment)
         }

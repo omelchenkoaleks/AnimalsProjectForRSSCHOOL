@@ -1,12 +1,10 @@
 package com.omelchenkoaleks.animals.screens.main
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.omelchenkoaleks.animals.AnimalsApplication
@@ -20,9 +18,6 @@ class AnimalsFragment : Fragment() {
     private var _binding: FragmentAnimalsBinding? = null
     private val binding get() = requireNotNull(_binding)
 
-    // TODO: until not used!!!
-    var updateList: Boolean = false
-
     private val animalViewModel: AnimalViewModel by viewModels {
         AnimalViewModelFactory((activity?.application as AnimalsApplication).repository)
     }
@@ -30,15 +25,6 @@ class AnimalsFragment : Fragment() {
     private lateinit var recycler: RecyclerView
     private lateinit var adapter: AnimalsAdapter
 
-    @SuppressLint("NotifyDataSetChanged")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: returned data from fragment Sort ??? until not used!!!
-        setFragmentResultListener("key_redraw_list_request") { _, bundle ->
-            updateList = bundle.getBoolean("key_redraw_list_bundle")
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,6 +57,7 @@ class AnimalsFragment : Fragment() {
         super.onResume()
         APP_ACTIVITY.toolbarTitle.text = getString(R.string.animals)
         APP_ACTIVITY.buttonSort.visibility = View.VISIBLE
+
     }
 
     override fun onDestroyView() {
