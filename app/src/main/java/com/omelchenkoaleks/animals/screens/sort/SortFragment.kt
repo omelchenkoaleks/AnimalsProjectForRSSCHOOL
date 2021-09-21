@@ -14,8 +14,6 @@ class SortFragment : Fragment() {
     private var _binding: FragmentSortBinding? = null
     private val binding get() = requireNotNull(_binding)
 
-    private var redrawList = false
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,8 +27,6 @@ class SortFragment : Fragment() {
 
         APP_ACTIVITY.buttonBack.setOnClickListener {
             APP_ACTIVITY.buttonBack.visibility = View.INVISIBLE
-
-            redrawList = true
 
             APP_ACTIVITY.navController.navigate(R.id.action_extraOnSortFragment_to_animalsFragment)
         }

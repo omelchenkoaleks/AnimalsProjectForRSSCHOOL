@@ -13,8 +13,14 @@ interface AnimalDao {
     @Query("SELECT * FROM animal_table")
     fun getAllAnimals(): Flow<List<Animal>>
 
-    @Query("SELECT * FROM animal_table WHERE name LIKE :name OR age LIKE :age OR breed LIKE :breed")
-    fun getAllAnimalsBySort(name: String, age: String, breed: String): Flow<List<Animal>>
+    @Query("SELECT * FROM animal_table ORDER BY name COLLATE NOCASE ASC")
+    fun getListSortedByName(): Flow<List<Animal>>
+
+    @Query("SELECT * FROM animal_table ORDER BY age ASC")
+    fun getListSortedByAge(): Flow<List<Animal>>
+
+    @Query("SELECT * FROM animal_table ORDER BY breed COLLATE NOCASE ASC")
+    fun getListSortedByBreed(): Flow<List<Animal>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(animal: Animal)

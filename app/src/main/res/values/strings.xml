@@ -15,4 +15,14 @@
     <string name="save">Save</string>
     <string name="sort">Please choose how you want to sort the animals!</string>
 
+
+    /* ---------- */
+    <string name="sort_list_title">Sort By:</string>
+
+    <string-array name="sort_by">
+        <item>Name</item>
+        <item>Age</item>
+        <item>Breed</item>
+    </string-array>
+
 </resources>
